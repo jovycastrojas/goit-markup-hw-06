@@ -71,6 +71,10 @@ button {
 .section {
   padding: 120px 0;
 }
+
+input , textarea {
+  outline: none;
+}
 /* END OF GENERAL STYLES */
 
 /* HEADER SECTION */
@@ -711,6 +715,8 @@ border-top: unset;
     margin-bottom: 16px;
   }
 
+
+
   .modal-form {
     display: block;
     flex-direction: column;
@@ -730,7 +736,7 @@ border-top: unset;
   font-family: Roboto;
 }
 
-.modal-input {
+.form-input {
     position: relative;
     width: 360px;
     height: 40px;
@@ -738,18 +744,29 @@ border-top: unset;
     border: 1px solid var(--lightslate); 
     stroke: currentColor;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill var(--transition-duration)
+    var(--animation-timing-function),
+    stroke var(--transition-duration)
+    var(--animation-timing-function);
+    padding-left: 38px;
+    font-family: inherit;
+    font-size: 12px;
 }
 
-.modal-input:hover {
-  border-color: var(--iris);
-}
+.form-input:hover {
+    border-color: var(--iris);
+  }
 
-.input-name, .input-phone, .input-email {
+  .form-input:hover + .input-svg  {
+    fill: var(--iris);
+    stroke: var(--iris);
+  }
+
+.input-svg {
   position: absolute;
-  margin-top: -26px;
+  margin-top: -30px;
   margin-left: 16px;
   fill: var(--navyblue);
-  stroke: currentColor;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill var(--transition-duration)
     var(--animation-timing-function),
@@ -757,18 +774,20 @@ border-top: unset;
     var(--animation-timing-function);
 }
 
-.input-name:hover, .input-phone:hover, .input-email:hover {
+.input-svg:hover {
   fill: var(--iris);
   stroke: var(--iris);
 }
 
-.text-input {
-  color: var(--navybluemodal);
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: 0.48px;
-  padding: 8px;
-  font-family: Roboto;
+.form-field {
+  display: inline;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.form-field:active,
+.form-field:hover {
+
 }
 
 .modal-comment {
@@ -776,6 +795,13 @@ border-top: unset;
   height: 120px;
   border-radius: 4px;
   border: 1px solid var(--lightslate);
+  padding-left: 18px;
+  padding-top: 8px;
+  color: var(--navybluemodal);
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.48px;
+  font-family: inherit;
 }
 
 .modal-terms {
@@ -819,4 +845,12 @@ border-top: unset;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.64px;
+  transition: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.send-button:hover,
+.send-button:focus {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  background: var(--ocean);
 }

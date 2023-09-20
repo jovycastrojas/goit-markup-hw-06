@@ -307,7 +307,7 @@
     <footer class="footer section">
       <div class="container footer-container">
         <div class="footer-description-section">
-            <a class="footer-logo" href="../goit-markup-hw-05/index.html"><span class="iris">WEB</span><span class="studio-2">STUDIO</span></a>
+            <a class="footer-logo" href="../goit-markup-hw-06/index.html"><span class="iris">WEB</span><span class="studio-2">STUDIO</span></a>
             <p class="footer-description"> 
               Increase the flow of customers and <br>
               sales for your business with digital <br>
@@ -350,26 +350,33 @@
     <div class="modal-title">
     <h4>Leave your contacts and we will call you back</h4></div>
     <form class="modal-form">
-      <label class="modal-name">Name</label>
-      <input class="modal-input" type="text" name="modal-form-name"/>
-      <svg class="input-name" width="18" height="18">
+      <label class="modal-name" for="modal-form-name">
+        <span>Name</span>
+      <input class="form-input" type="text" name="modal-form-name"/>
+      <svg class="input-svg" width="18" height="18">
         <use href="./images/icons.svg#icon-name">
       </svg>
-      <label class="modal-name">Phone</label>
-      <input class="modal-input" type="phone" name="modal-form-phone"/>
-      <svg class="input-phone" width="18" height="24">
+      </label>
+      <label class="modal-name" for="modal-form-phone">
+        <span>Phone</span></label>
+      <input class="form-input" type="phone" name="modal-form-phone"/>
+      <svg class="input-svg" width="18" height="24">
         <use href="./images/icons.svg#icon-phone">
       </svg>
-      <label class="modal-name">Email</label>
-      <input class="modal-input" type="email" name="modal-form-email"/>
-      <svg class="input-email" width="18" height="24">
+    </label>
+      <label class="modal-name" for="modal-form-email">
+        <span>Email</span>
+      <input class="form-input" type="email" name="modal-form-email"/>
+      <svg class="input-svg" width="18" height="24">
         <use href="./images/icons.svg#icon-email">
       </svg>
-      <label class="modal-name">Comment</label>
-        <textarea class="modal-comment text-input" name="modal-form-comment" rows="7" placeholder="Text Input"></textarea>
-      <label class="modal-terms">
+      </label>
+      <label class="modal-name" for="feedback">
+        <span>Comment</span>
+        <textarea class="modal-comment" name="modal-form-comment" rows="7" placeholder="Text Input"></textarea>
+      </label>
+      <label class="modal-terms" for="modal-form-checkbox">
       <input type="checkbox" name="modal-form-checkbox" value="checkbox"/>
-      <label>
       <span class="checkbox-terms">I accept the terms and conditions of the </span><span class="privacy-policy">Privacy Policy</span></label>
     </label>
     <button class="send-button" type="submit">Send</button>
