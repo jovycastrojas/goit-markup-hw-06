@@ -733,7 +733,12 @@ border-top: unset;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0.48px;
-  font-family: Roboto;
+  position: relative;
+}
+
+.modal-name-item {
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
 .form-input {
@@ -753,19 +758,19 @@ border-top: unset;
     font-size: 12px;
 }
 
-.form-input:hover {
+.form-input:hover, .form-input:focus {
     border-color: var(--iris);
   }
 
-  .form-input:hover + .input-svg  {
+  .form-input:hover + .input-svg {
     fill: var(--iris);
     stroke: var(--iris);
   }
 
 .input-svg {
   position: absolute;
-  margin-top: -30px;
-  margin-left: 16px;
+  top: 26px;
+  left: 16px;
   fill: var(--navyblue);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill var(--transition-duration)
@@ -774,10 +779,6 @@ border-top: unset;
     var(--animation-timing-function);
 }
 
-.input-svg:hover {
-  fill: var(--iris);
-  stroke: var(--iris);
-}
 
 .form-field {
   display: inline;
@@ -785,10 +786,6 @@ border-top: unset;
   margin-bottom: 16px;
 }
 
-.form-field:active,
-.form-field:hover {
-
-}
 
 .modal-comment {
   width: 360px;
@@ -804,19 +801,65 @@ border-top: unset;
   font-family: inherit;
 }
 
+
 .modal-terms {
   display: block;
   margin-top: 16px;
   margin-bottom: 24px;
-
 }
+
+
+
 .checkbox-terms {
   color: var(--lightslate);
   font-size: 12px;
   font-weight: 400;
   line-height: 14px;
   letter-spacing: 0.48px;
+  left: 8px;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.modal-checkbox {
+  display: none;
+  z-index: 6;
+  opacity: 1;
+  cursor: pointer;
+  transition-property: opacity;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing);
+}
+
+.input-svg-checkbox {
+ display: flex;
+ position: absolute;
+ width: 13px;
+ height: 13px;
+z-index: 5;
+fill: var(--ocean);
+stroke-width: 1px;
+stroke: var(--ocean);
+background-color: var(--white);
+}
+
+.modal-checkbox:checked + .input-svg-checkbox {
+  opacity: 1;
+  background-color: var(--ocean);
+}
+
+
 
 .privacy-policy {
   color: var(--iris);
