@@ -648,13 +648,13 @@ border-top: unset;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    border-color: var(--iris);
+    border: 1px solid var(--iris);
     background: var(--iris);
     color: var(--white);
     text-align: center;
     gap: 16px;
-
-   
+    transition: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   /* Button Text */
     font-family: inherit;
     font-size: 16px;
@@ -662,12 +662,16 @@ border-top: unset;
     line-height: 24px; 
     letter-spacing: 0.64px;
   }
+
 .subscribe-icon {
   display: inline-flex;
   fill: currentColor;
   width: auto;
   padding-left: 4px;
-  
+}
+
+.subscribe-button:hover, .subscribe-button:focus {
+  background: var(--ocean) ;
 }
 
 /* MODAL SECTION */
@@ -793,6 +797,11 @@ border-top: unset;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     font-family: inherit;
     font-size: 12px;
+    padding: 8px 8px 8px 38px;
+    line-height: 14px;
+    letter-spacing: 0.48px;
+    color: var(--navyblue);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
   .form-input:is(:hover, :focus) + .input-svg {
@@ -800,7 +809,7 @@ border-top: unset;
     border-color: var(--iris);
   }
 
-  .form-input:hover, .form-input:hover {
+  .form-input:hover, .form-input:focus, .modal-comment:hover, .modal-comment:focus {
     border-color: var(--iris);
   }
 .input-svg {
@@ -809,10 +818,6 @@ border-top: unset;
   left: 16px;
   fill: var(--navyblue);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: fill var(--transition-duration)
-    var(--animation-timing-function),
-    stroke var(--transition-duration)
-    var(--animation-timing-function);
 }
 
 
@@ -835,6 +840,8 @@ border-top: unset;
   line-height: 14px;
   letter-spacing: 0.48px;
   font-family: inherit;
+  resize: none;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -889,7 +896,9 @@ padding: 2px;
 }
 
 .modal-terms {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 16px;
   margin-bottom: 24px;
   position: relative;
